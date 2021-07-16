@@ -8,6 +8,7 @@
 namespace Leadvertex\Plugin\Core\PBX\Factories;
 
 
+use Leadvertex\Plugin\Components\SpecialRequestDispatcher\Commands\SpecialRequestDispatcherCommand;
 use Symfony\Component\Console\Application;
 
 class ConsoleAppFactory extends \Leadvertex\Plugin\Core\Factories\ConsoleAppFactory
@@ -15,7 +16,9 @@ class ConsoleAppFactory extends \Leadvertex\Plugin\Core\Factories\ConsoleAppFact
 
     public function build(): Application
     {
-        return parent::build();
+        $app = parent::build();
+        $app->add(new SpecialRequestDispatcherCommand());
+        return $app;
     }
 
 }

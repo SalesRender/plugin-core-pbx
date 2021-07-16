@@ -38,10 +38,10 @@ Info::config(
     fn() => Translator::get('info', 'Plugin name'),
     fn() => Translator::get('info', 'Plugin markdown description'),
     [
-        'pricing' => [
+        'USD' => [
             'pbx' => 0,
             'record' => 0,
-        ],
+        ]
     ],
     new Developer(
         'Your (company) name',

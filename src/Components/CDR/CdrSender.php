@@ -9,6 +9,8 @@ namespace Leadvertex\Plugin\Core\PBX\Components\CDR;
 
 use Leadvertex\Plugin\Components\Access\Registration\Registration;
 use Leadvertex\Plugin\Components\Db\Components\Connector;
+use Leadvertex\Plugin\Components\SpecialRequestDispatcher\Components\SpecialRequest;
+use Leadvertex\Plugin\Components\SpecialRequestDispatcher\Models\SpecialRequestDispatcher;
 use XAKEPEHOK\Path\Path;
 
 class CdrSender
@@ -30,12 +32,17 @@ class CdrSender
             ->down(Connector::getReference()->getCompanyId())
             ->down('CRM/plugin/pbx/cdr');
 
-        Registration::find()->makeSpecialRequest(
-            'POST',
+        $ttl = 60 * 60 * 24;
+        $request = new SpecialRequest(
+            'PATCH',
             (string) $uri,
-            $this->cdr,
-            60
+            (string) Registration::find()->getSpecialRequestToken($this->cdr, $ttl),
+            time() + $ttl,
+            200
         );
+
+        $dispatcher = new SpecialRequestDispatcher($request);
+        $dispatcher->save();
     }
 
 }

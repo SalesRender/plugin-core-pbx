@@ -13,17 +13,17 @@ use Leadvertex\Plugin\Components\Db\Components\Connector;
 class Config implements JsonSerializable
 {
 
-    public string $username;
-    public string $password;
-    public string $from;
+    public string $username = '';
+    public string $password = '';
+    public string $from = '';
     public string $protocol = 'udp';
-    public string $domain;
-    public string $realm;
-    public string $proxy;
+    public string $domain = '';
+    public string $realm = '';
+    public string $proxy = '';
     public int $expires = 600;
-    public bool $register;
-    public bool $number_format_with_plus;
-    public bool $send_additional_data_via_x_headers;
+    public bool $register = false;
+    public bool $number_format_with_plus = true;
+    public bool $send_additional_data_via_x_headers = false;
 
     public function jsonSerialize(): array
     {

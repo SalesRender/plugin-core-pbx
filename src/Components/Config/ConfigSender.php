@@ -9,6 +9,8 @@ namespace Leadvertex\Plugin\Core\PBX\Components\Config;
 
 use Leadvertex\Plugin\Components\Access\Registration\Registration;
 use Leadvertex\Plugin\Components\Db\Components\Connector;
+use Leadvertex\Plugin\Components\SpecialRequestDispatcher\Components\SpecialRequest;
+use Leadvertex\Plugin\Components\SpecialRequestDispatcher\Models\SpecialRequestDispatcher;
 use XAKEPEHOK\Path\Path;
 
 class ConfigSender
@@ -21,7 +23,7 @@ class ConfigSender
         $this->builder = $builder;
     }
 
-    public function __invoke()
+    public function __invoke(): void
     {
         $config = ($this->builder)();
         $registration = Registration::find();
@@ -30,12 +32,17 @@ class ConfigSender
             ->down(Connector::getReference()->getCompanyId())
             ->down('CRM/plugin/pbx/settings');
 
-        Registration::find()->makeSpecialRequest(
-            'POST',
+        $ttl = 60 * 60 * 24;
+        $request = new SpecialRequest(
+            'PUT',
             (string) $uri,
-            $config->jsonSerialize(),
-            60
+            (string) Registration::find()->getSpecialRequestToken($config->jsonSerialize(), $ttl),
+            time() + $ttl,
+            200
         );
+
+        $dispatcher = new SpecialRequestDispatcher($request);
+        $dispatcher->save();
     }
 
 }
