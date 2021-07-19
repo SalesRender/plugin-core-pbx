@@ -38,7 +38,8 @@ Info::config(
     fn() => Translator::get('info', 'Plugin name'),
     fn() => Translator::get('info', 'Plugin markdown description'),
     [
-        'USD' => [
+        'currency' => 'USD',
+        'pricing' => [
             'pbx' => 0,
             'record' => 0,
         ]
