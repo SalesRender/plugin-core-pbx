@@ -54,14 +54,6 @@ Info::config(
 # 4. Configure settings form
 Settings::setForm(fn() => new Form());
 
-# 5 Configure ConfigBuilder and ConfigSender as Settings::addOnSaveHandler()
-Settings::addOnSaveHandler(function (Settings $settings) {
-    $builder = new ConfigBuilder($settings);
-    $config = $builder();
-    $sender = new ConfigSender($config);
-    $sender();
-});
-
 # 5. Configure form autocompletes (or remove this block if dont used)
 AutocompleteRegistry::config(function (string $name) {
 //    switch ($name) {
@@ -71,12 +63,19 @@ AutocompleteRegistry::config(function (string $name) {
 //    }
 });
 
-# 6. Define CDR reward pricing function
+# 6. Configure ConfigBuilder and ConfigSender as Settings::addOnSaveHandler()
+Settings::addOnSaveHandler(function (Settings $settings) {
+    $builder = new ConfigBuilder($settings);
+    $sender = new ConfigSender($builder);
+    $sender();
+});
+
+# 7. Define CDR reward pricing function
 CdrPricing::config(function (Money $money) {
     return $money->divide(100)->multiply(10);
 });
 
-# 6. Configure CDR parsers
+# 8. Configure CDR parsers
 CdrParserContainer::config(
     new CdrApiParserInterface(),
     new CdrWebhookParserInterface(),
