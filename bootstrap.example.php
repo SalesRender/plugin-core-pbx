@@ -38,7 +38,7 @@ Info::config(
     fn() => Translator::get('info', 'Plugin name'),
     fn() => Translator::get('info', 'Plugin markdown description'),
     [
-        'currency' => 'USD',
+        'currency' => $_ENV['LV_PLUGIN_PBX_PRICING_CURRENCY'],
         'pricing' => [
             'pbx' => 0,
             'record' => 0,
