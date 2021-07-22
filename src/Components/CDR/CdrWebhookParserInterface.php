@@ -7,6 +7,9 @@
 
 namespace Leadvertex\Plugin\Core\PBX\Components\CDR;
 
+use Slim\Http\Response;
+use Slim\Http\ServerRequest;
+
 interface CdrWebhookParserInterface
 {
 
@@ -17,6 +20,6 @@ interface CdrWebhookParserInterface
     /**
      * @return CDR[]
      */
-    public function __invoke(): array;
+    public function __invoke(ServerRequest $request, Response $response, array $args): array;
 
 }
