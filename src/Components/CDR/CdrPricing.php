@@ -13,7 +13,7 @@ class CdrPricing
 {
 
     /** @var callable */
-    private static $rewardCals;
+    private static $rewardCalc;
 
     private Money $providerPricing;
 
@@ -29,12 +29,12 @@ class CdrPricing
 
     public function getRewardPricing(): Money
     {
-        return (self::$rewardCals)($this->providerPricing);
+        return (self::$rewardCalc)($this->providerPricing);
     }
 
     public static function config(callable $rewardCalc): void
     {
-        self::$rewardCals = $rewardCalc;
+        self::$rewardCalc = $rewardCalc;
     }
 
 
