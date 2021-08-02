@@ -24,6 +24,7 @@ class Config implements JsonSerializable
     public bool $register = false;
     public bool $number_format_with_plus = true;
     public bool $send_additional_data_via_x_headers = false;
+    public bool $record = true;
 
     public function jsonSerialize(): array
     {
@@ -41,6 +42,7 @@ class Config implements JsonSerializable
             'need_registration' => $this->register,
             'number_format_with_plus' => $this->number_format_with_plus,
             'send_additional_data_via_x_headers' => $this->send_additional_data_via_x_headers,
+            'record' => $this->record,
         ];
     }
 }
