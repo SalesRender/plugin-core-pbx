@@ -30,7 +30,7 @@ class ConfigSender
         $uri = (new Path($registration->getClusterUri()))
             ->down('companies')
             ->down(Connector::getReference()->getCompanyId())
-            ->down('CRM/plugin/pbx/settings');
+            ->down('CRM/plugin/pbx/gateway');
 
         $ttl = 60 * 60 * 24;
         $request = new SpecialRequest(
@@ -38,7 +38,7 @@ class ConfigSender
             (string) $uri,
             (string) Registration::find()->getSpecialRequestToken($config->jsonSerialize(), $ttl),
             time() + $ttl,
-            200
+            202
         );
 
         $dispatcher = new SpecialRequestDispatcher($request);
