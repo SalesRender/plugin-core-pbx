@@ -13,7 +13,7 @@ class CDR implements JsonSerializable
 {
 
     public string $phone;
-    public string $callId;
+    public ?string $callId = null;
     public int $timestamp;
     public int $duration;
     public ?string $recordUri = null;
