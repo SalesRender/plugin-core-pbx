@@ -7,9 +7,10 @@
 
 namespace Leadvertex\Plugin\Core\PBX\Components\CDR;
 
+use JsonSerializable;
 use Money\Money;
 
-class CdrPricing
+class CdrPricing implements JsonSerializable
 {
 
     /** @var callable */
@@ -38,4 +39,11 @@ class CdrPricing
     }
 
 
+    public function jsonSerialize(): array
+    {
+        return [
+            'provider' => $this->getProviderPricing()->jsonSerialize(),
+            'reward' => $this->getRewardPricing()->jsonSerialize(),
+        ];
+    }
 }

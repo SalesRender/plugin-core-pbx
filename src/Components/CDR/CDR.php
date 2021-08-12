@@ -17,7 +17,7 @@ class CDR implements JsonSerializable
     public int $timestamp;
     public int $duration;
     public string $recordUri;
-    public CdrPricing $pricing;
+    public ?CdrPricing $pricing = null;
 
     public function __construct(string $phone)
     {
@@ -32,10 +32,7 @@ class CDR implements JsonSerializable
             'timestamp' => $this->timestamp,
             'duration' => $this->duration,
             'recordUri' => $this->recordUri,
-            'pricing' => [
-                'provider' => $this->pricing->getProviderPricing()->jsonSerialize(),
-                'reward' => $this->pricing->getRewardPricing()->jsonSerialize(),
-            ],
+            'pricing' => $this->pricing,
         ];
     }
 }
