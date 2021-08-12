@@ -16,7 +16,7 @@ class CDR implements JsonSerializable
     public string $callId;
     public int $timestamp;
     public int $duration;
-    public string $recordUri;
+    public ?string $recordUri = null;
     public ?CdrPricing $pricing = null;
 
     public function __construct(string $phone)
