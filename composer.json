@@ -19,7 +19,6 @@
     "php": ">=7.4.0",
     "ext-json": "*",
     "leadvertex/plugin-core": "^0.3.0",
-    "moneyphp/money": "^3.3",
-    "leadvertex/plugin-component-request-dispatcher": "^0.1.0"
+    "moneyphp/money": "^3.3"
   }
 }
