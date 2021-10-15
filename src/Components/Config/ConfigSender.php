@@ -10,7 +10,7 @@ namespace Leadvertex\Plugin\Core\PBX\Components\Config;
 use Leadvertex\Plugin\Components\Access\Registration\Registration;
 use Leadvertex\Plugin\Components\Db\Components\Connector;
 use Leadvertex\Plugin\Components\SpecialRequestDispatcher\Components\SpecialRequest;
-use Leadvertex\Plugin\Components\SpecialRequestDispatcher\Models\SpecialRequestDispatcher;
+use Leadvertex\Plugin\Components\SpecialRequestDispatcher\Models\SpecialRequestTask;
 use XAKEPEHOK\Path\Path;
 
 class ConfigSender
@@ -41,7 +41,7 @@ class ConfigSender
             202
         );
 
-        $dispatcher = new SpecialRequestDispatcher($request);
+        $dispatcher = new SpecialRequestTask($request);
         $dispatcher->save();
     }
 
