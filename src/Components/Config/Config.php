@@ -34,7 +34,7 @@ class Config implements JsonSerializable
             'username' => $this->username,
             'password' => $this->password,
             'from' => $this->from,
-            'protocol' => $this->from,
+            'protocol' => $this->protocol,
             'domain' => $this->domain,
             'realm' => $this->realm,
             'proxy' => $this->proxy,
