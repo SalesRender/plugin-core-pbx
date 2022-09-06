@@ -18,8 +18,10 @@ interface CdrWebhookParserInterface
     public function getPattern(): string;
 
     /**
-     * @return CDR[]
+     * @param ServerRequest $request
+     * @param Response $response
+     * @param array $args
      */
-    public function __invoke(ServerRequest $request, Response $response, array $args): array;
+    public function __invoke(ServerRequest $request, Response $response, array $args): Response;
 
 }

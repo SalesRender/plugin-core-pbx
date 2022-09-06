@@ -38,7 +38,7 @@ class CdrSender
             (string) $uri,
             (string) Registration::find()->getSpecialRequestToken($this->cdr, $ttl),
             time() + $ttl,
-            200
+            202
         );
 
         $dispatcher = new SpecialRequestTask($request);
