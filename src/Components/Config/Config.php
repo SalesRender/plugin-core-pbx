@@ -31,6 +31,7 @@ class Config implements JsonSerializable
         return [
             'company_id' => Connector::getReference()->getCompanyId(),
             'plugin_id' => Connector::getReference()->getId(),
+            'plugin_alias' => Connector::getReference()->getAlias(),
             'username' => $this->username,
             'password' => $this->password,
             'from' => $this->from,
