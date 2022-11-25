@@ -20,6 +20,7 @@ class Config implements JsonSerializable
     public string $domain = '';
     public string $realm = '';
     public string $proxy = '';
+    public string $header_for_DID = '';
     public int $expires = 600;
     public bool $register = false;
     public bool $number_format_with_plus = true;
@@ -44,6 +45,7 @@ class Config implements JsonSerializable
             'number_format_with_plus' => $this->number_format_with_plus,
             'send_additional_data_via_x_headers' => $this->send_additional_data_via_x_headers,
             'record' => $this->record,
+            'header_for_DID' => $this->header_for_DID,
         ];
     }
 }
