@@ -5,13 +5,13 @@
  * @author Timur Kasumov (XAKEPEHOK)
  */
 
-namespace Leadvertex\Plugin\Core\PBX\Factories;
+namespace SalesRender\Plugin\Core\PBX\Factories;
 
 
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CdrParserContainer;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CdrParserContainer;
 use Slim\App;
 
-class WebAppFactory extends \Leadvertex\Plugin\Core\Factories\WebAppFactory
+class WebAppFactory extends \SalesRender\Plugin\Core\Factories\WebAppFactory
 {
 
     public function build(): App

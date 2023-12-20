@@ -5,7 +5,7 @@
  * @author Timur Kasumov (XAKEPEHOK)
  */
 
-namespace Leadvertex\Plugin\Core\PBX\Components\CDR;
+namespace SalesRender\Plugin\Core\PBX\Components\CDR;
 
 use JsonSerializable;
 

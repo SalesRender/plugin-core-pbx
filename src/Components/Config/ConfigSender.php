@@ -5,12 +5,12 @@
  * @author Timur Kasumov (XAKEPEHOK)
  */
 
-namespace Leadvertex\Plugin\Core\PBX\Components\Config;
+namespace SalesRender\Plugin\Core\PBX\Components\Config;
 
-use Leadvertex\Plugin\Components\Access\Registration\Registration;
-use Leadvertex\Plugin\Components\Db\Components\Connector;
-use Leadvertex\Plugin\Components\SpecialRequestDispatcher\Components\SpecialRequest;
-use Leadvertex\Plugin\Components\SpecialRequestDispatcher\Models\SpecialRequestTask;
+use SalesRender\Plugin\Components\Access\Registration\Registration;
+use SalesRender\Plugin\Components\Db\Components\Connector;
+use SalesRender\Plugin\Components\SpecialRequestDispatcher\Components\SpecialRequest;
+use SalesRender\Plugin\Components\SpecialRequestDispatcher\Models\SpecialRequestTask;
 use XAKEPEHOK\Path\Path;
 
 class ConfigSender

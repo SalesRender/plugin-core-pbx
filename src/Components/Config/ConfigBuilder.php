@@ -5,9 +5,9 @@
  * @author Timur Kasumov (XAKEPEHOK)
  */
 
-namespace Leadvertex\Plugin\Core\PBX\Components\Config;
+namespace SalesRender\Plugin\Core\PBX\Components\Config;
 
-use Leadvertex\Plugin\Components\Settings\Settings;
+use SalesRender\Plugin\Components\Settings\Settings;
 
 interface ConfigBuilder
 {

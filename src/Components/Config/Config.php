@@ -5,10 +5,10 @@
  * @author Timur Kasumov (XAKEPEHOK)
  */
 
-namespace Leadvertex\Plugin\Core\PBX\Components\Config;
+namespace SalesRender\Plugin\Core\PBX\Components\Config;
 
 use JsonSerializable;
-use Leadvertex\Plugin\Components\Db\Components\Connector;
+use SalesRender\Plugin\Components\Db\Components\Connector;
 
 class Config implements JsonSerializable
 {

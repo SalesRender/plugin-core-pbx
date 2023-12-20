@@ -1,24 +1,24 @@
 {
-  "name": "leadvertex/plugin-core-pbx",
-  "description": "LeadVertex plugin pbx core",
+  "name": "salesrender/plugin-core-pbx",
+  "description": "SalesRender plugin pbx core",
   "type": "library",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
     {
       "name": "Timur Kasumov aka XAKEPEHOK",
-      "email": "support@leadvertex.com"
+      "email": "support@salesrender.com"
     }
   ],
   "autoload": {
     "psr-4": {
-      "Leadvertex\\Plugin\\Core\\PBX\\": "src/"
+      "SalesRender\\Plugin\\Core\\PBX\\": "src/"
     }
   },
   "require": {
     "php": ">=7.4.0",
     "ext-json": "*",
-    "leadvertex/plugin-core": "^0.3.0",
+    "salesrender/plugin-core": "^0.3.0",
     "moneyphp/money": "^3.3"
   }
 }

@@ -5,18 +5,18 @@
  * @author Timur Kasumov (XAKEPEHOK)
  */
 
-use Leadvertex\Plugin\Components\Db\Components\Connector;
-use Leadvertex\Plugin\Components\Form\Autocomplete\AutocompleteRegistry;
-use Leadvertex\Plugin\Components\Form\Form;
-use Leadvertex\Plugin\Components\Info\Developer;
-use Leadvertex\Plugin\Components\Info\Info;
-use Leadvertex\Plugin\Components\Info\PluginType;
-use Leadvertex\Plugin\Components\Settings\Settings;
-use Leadvertex\Plugin\Components\Translations\Translator;
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CdrParserContainer;
-use Leadvertex\Plugin\Core\PBX\Components\CDR\CdrPricing;
-use Leadvertex\Plugin\Core\PBX\Components\Config\ConfigBuilder;
-use Leadvertex\Plugin\Core\PBX\Components\Config\ConfigSender;
+use SalesRender\Plugin\Components\Db\Components\Connector;
+use SalesRender\Plugin\Components\Form\Autocomplete\AutocompleteRegistry;
+use SalesRender\Plugin\Components\Form\Form;
+use SalesRender\Plugin\Components\Info\Developer;
+use SalesRender\Plugin\Components\Info\Info;
+use SalesRender\Plugin\Components\Info\PluginType;
+use SalesRender\Plugin\Components\Settings\Settings;
+use SalesRender\Plugin\Components\Translations\Translator;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CdrParserContainer;
+use SalesRender\Plugin\Core\PBX\Components\CDR\CdrPricing;
+use SalesRender\Plugin\Core\PBX\Components\Config\ConfigBuilder;
+use SalesRender\Plugin\Core\PBX\Components\Config\ConfigSender;
 use Medoo\Medoo;
 use Money\Money;
 use XAKEPEHOK\Path\Path;
