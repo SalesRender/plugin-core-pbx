@@ -19,6 +19,7 @@ use SalesRender\Plugin\Core\PBX\Components\Config\ConfigBuilder;
 use SalesRender\Plugin\Core\PBX\Components\Config\ConfigSender;
 use Medoo\Medoo;
 use Money\Money;
+use SalesRender\Plugin\Core\PBX\Components\Webhook\WebhookCallContainer;
 use XAKEPEHOK\Path\Path;
 
 # 0. Configure environment variable in .env file, that placed into root of app
@@ -80,4 +81,9 @@ CdrParserContainer::config(
     new CdrApiParserInterface(),
     new CdrWebhookParserInterface(),
     new CdrWebhookParserInterface(),
+);
+
+# 9. Configure webhook call action. Required for Pbx Webhook plugin type
+WebhookCallContainer::config(
+    new WebhookCallAction(),
 );
