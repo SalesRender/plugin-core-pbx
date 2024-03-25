@@ -27,11 +27,11 @@ class WebAppFactory extends \SalesRender\Plugin\Core\Factories\WebAppFactory
             );
         }
 
-        $webhookCallAction = CallByWebhookContainer::getWebhookCallAction();
-        if ($webhookCallAction !== null) {
+        $callByWebhookAction = CallByWebhookContainer::getCallByWebhookAction();
+        if ($callByWebhookAction !== null) {
             $this
                 ->addCors()
-                ->addSpecialRequestAction($webhookCallAction);
+                ->addSpecialRequestAction($callByWebhookAction);
         }
 
         return parent::build();

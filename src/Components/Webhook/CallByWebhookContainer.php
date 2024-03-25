@@ -4,16 +4,16 @@ namespace SalesRender\Plugin\Core\PBX\Components\Webhook;
 
 class CallByWebhookContainer
 {
-    private static ?CallByWebhookAction $webhookCallAction = null;
+    private static ?CallByWebhookAction $callByWebhookAction = null;
 
-    public static function config(?CallByWebhookAction $webhookCallAction)
+    public static function config(?CallByWebhookAction $callByWebhookAction)
     {
-        self::$webhookCallAction = $webhookCallAction;
+        self::$callByWebhookAction = $callByWebhookAction;
     }
 
-    public static function getWebhookCallAction(): ?CallByWebhookAction
+    public static function getCallByWebhookAction(): ?CallByWebhookAction
     {
-        return self::$webhookCallAction;
+        return self::$callByWebhookAction;
     }
 
 }
