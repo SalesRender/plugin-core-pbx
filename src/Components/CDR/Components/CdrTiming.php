@@ -4,9 +4,9 @@ namespace SalesRender\Plugin\Core\PBX\Components\CDR\Components;
 
 class CdrTiming
 {
-    protected int $start;
-    protected int $duration;
-    protected int $earlyMediaDuration;
+    public int $start;
+    public int $duration;
+    public int $earlyMediaDuration;
 
     public function __construct(int $start, int $earlyMediaDuration, int $duration)
     {
@@ -15,18 +15,4 @@ class CdrTiming
         $this->duration = $duration;
     }
 
-    public function getStart(): int
-    {
-        return $this->start;
-    }
-
-    public function getEarlyMediaDuration(): int
-    {
-        return $this->earlyMediaDuration;
-    }
-
-    public function getDuration(): int
-    {
-        return $this->duration;
-    }
 }

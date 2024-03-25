@@ -89,5 +89,5 @@ CdrParserContainer::config(
 
 # 9. Configure webhook call action. Required for Pbx Webhook plugin type
 CallByWebhookContainer::config(
-    new WebhookCallAction(),
+    new CallByWebhookAction(),
 );
