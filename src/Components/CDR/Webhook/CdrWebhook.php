@@ -20,7 +20,7 @@ class CdrWebhook extends CDR
     {
         return [
             'phone' => $this->phone,
-            'uuid' => $this->callId,
+            'callId' => $this->callId,
             'call_start' => $this->timing->getStart(),
             'early_media_duration' => $this->timing->getEarlyMediaDuration(),
             'bill_sec' => $this->timing->getStart(),
