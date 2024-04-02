@@ -11,6 +11,8 @@ use SalesRender\Plugin\Components\Form\Form;
 use SalesRender\Plugin\Components\Info\Developer;
 use SalesRender\Plugin\Components\Info\Info;
 use SalesRender\Plugin\Components\Info\PluginType;
+use SalesRender\Plugin\Components\Purpose\PbxPluginClass;
+use SalesRender\Plugin\Components\Purpose\PluginEntity;
 use SalesRender\Plugin\Components\Settings\Settings;
 use SalesRender\Plugin\Components\Translations\Translator;
 use SalesRender\Plugin\Core\PBX\Components\CDR\CdrParserContainer;
@@ -19,6 +21,7 @@ use SalesRender\Plugin\Core\PBX\Components\Config\ConfigBuilder;
 use SalesRender\Plugin\Core\PBX\Components\Config\ConfigSender;
 use Medoo\Medoo;
 use Money\Money;
+use SalesRender\Plugin\Core\PBX\Components\Webhook\CallByWebhookContainer;
 use XAKEPEHOK\Path\Path;
 
 # 0. Configure environment variable in .env file, that placed into root of app
@@ -38,6 +41,8 @@ Info::config(
     fn() => Translator::get('info', 'Plugin name'),
     fn() => Translator::get('info', 'Plugin markdown description'),
     [
+        'class' => PbxPluginClass::CLASS_SIP,
+        'entity' => PluginEntity::ENTITY_UNSPECIFIED,
         'currency' => $_ENV['LV_PLUGIN_PBX_PRICING_CURRENCY'],
         'pricing' => [
             'pbx' => 0,
@@ -80,4 +85,9 @@ CdrParserContainer::config(
     new CdrApiParserInterface(),
     new CdrWebhookParserInterface(),
     new CdrWebhookParserInterface(),
+);
+
+# 9. Configure webhook call action. Required for Pbx Webhook plugin type
+CallByWebhookContainer::config(
+    new CallByWebhookAction(),
 );

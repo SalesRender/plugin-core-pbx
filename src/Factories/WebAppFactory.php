@@ -9,6 +9,7 @@ namespace SalesRender\Plugin\Core\PBX\Factories;
 
 
 use SalesRender\Plugin\Core\PBX\Components\CDR\CdrParserContainer;
+use SalesRender\Plugin\Core\PBX\Components\Webhook\CallByWebhookContainer;
 use Slim\App;
 
 class WebAppFactory extends \SalesRender\Plugin\Core\Factories\WebAppFactory
@@ -24,6 +25,13 @@ class WebAppFactory extends \SalesRender\Plugin\Core\Factories\WebAppFactory
                 $webhookParser->getPattern(),
                 $webhookParser
             );
+        }
+
+        $callByWebhookAction = CallByWebhookContainer::getCallByWebhookAction();
+        if ($callByWebhookAction !== null) {
+            $this
+                ->addCors()
+                ->addSpecialRequestAction($callByWebhookAction);
         }
 
         return parent::build();
