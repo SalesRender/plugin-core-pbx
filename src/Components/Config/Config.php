@@ -16,6 +16,7 @@ class Config implements JsonSerializable
     public string $username = '';
     public string $password = '';
     public string $from = '';
+    public string $prefix = '';
     public string $protocol = 'udp';
     public string $domain = '';
     public string $realm = '';
@@ -38,6 +39,7 @@ class Config implements JsonSerializable
             'username' => $this->username,
             'password' => $this->password,
             'from' => $this->from,
+            'prefix' => $this->prefix,
             'protocol' => $this->protocol,
             'domain' => $this->domain,
             'realm' => $this->realm,
