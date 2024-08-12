@@ -27,6 +27,8 @@ class Config implements JsonSerializable
     public bool $send_additional_data_via_x_headers = false;
     public bool $record = true;
 
+    public int $originate_timeout = 60;
+
     public function jsonSerialize(): array
     {
         return [
@@ -46,6 +48,7 @@ class Config implements JsonSerializable
             'send_additional_data_via_x_headers' => $this->send_additional_data_via_x_headers,
             'record' => $this->record,
             'header_for_DID' => $this->header_for_DID,
+            'originate_timeout' => $this->originate_timeout,
         ];
     }
 }
