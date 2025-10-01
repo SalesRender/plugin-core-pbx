@@ -27,6 +27,7 @@ class Config implements JsonSerializable
     public bool $number_format_with_plus = true;
     public bool $send_additional_data_via_x_headers = false;
     public bool $record = true;
+    public bool $map_phone_to_gateway = false;
 
     public int $originate_timeout = 60;
 
@@ -51,6 +52,7 @@ class Config implements JsonSerializable
             'record' => $this->record,
             'header_for_DID' => $this->header_for_DID,
             'originate_timeout' => $this->originate_timeout,
+            'map_phone_to_gateway' => $this->map_phone_to_gateway,
         ];
     }
 }
