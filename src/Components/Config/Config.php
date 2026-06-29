@@ -30,6 +30,7 @@ class Config implements JsonSerializable
     public bool $map_phone_to_gateway = false;
 
     public int $originate_timeout = 60;
+    public bool $use_ip_address_in_contact = false;
 
     public function jsonSerialize(): array
     {
@@ -53,6 +54,7 @@ class Config implements JsonSerializable
             'header_for_DID' => $this->header_for_DID,
             'originate_timeout' => $this->originate_timeout,
             'map_phone_to_gateway' => $this->map_phone_to_gateway,
+            'use_ip_address_in_contact' => $this->use_ip_address_in_contact,
         ];
     }
 }
