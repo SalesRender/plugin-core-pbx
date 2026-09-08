@@ -144,7 +144,7 @@ $dotenv->load();
 # 1. Настройка БД (для SQLite файл *.db и родительская директория должны быть доступны для записи)
 Connector::config(new Medoo([
     'database_type' => 'sqlite',
-    'database_file' => Path::root()->down('db/database.db')
+    'database' => Path::root()->down('db/database.db')
 ]));
 
 # 2. Установка языка по умолчанию

@@ -16,10 +16,10 @@
     }
   },
   "require": {
-    "php": "^7.4.0",
+    "php": ">=8.4",
     "ext-json": "*",
-    "salesrender/plugin-core": "^0.4.0",
-    "moneyphp/money": "^3.3",
-    "salesrender/plugin-component-purpose": "^2.0"
+    "salesrender/plugin-core": "^1.0",
+    "moneyphp/money": "^4.0",
+    "salesrender/plugin-component-purpose": "^3.0"
   }
 }

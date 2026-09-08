@@ -36,7 +36,7 @@ class ConfigSender
         $request = new SpecialRequest(
             'PUT',
             (string) $uri,
-            (string) Registration::find()->getSpecialRequestToken($config->jsonSerialize(), $ttl),
+            Registration::find()->getSpecialRequestToken($config->jsonSerialize(), $ttl)->toString(),
             time() + $ttl,
             202
         );

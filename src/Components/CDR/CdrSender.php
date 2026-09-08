@@ -36,7 +36,7 @@ class CdrSender
         $request = new SpecialRequest(
             'PATCH',
             (string) $uri,
-            (string) Registration::find()->getSpecialRequestToken($this->cdr, $ttl),
+            Registration::find()->getSpecialRequestToken($this->cdr, $ttl)->toString(),
             time() + $ttl,
             202
         );

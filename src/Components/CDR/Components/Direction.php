@@ -6,8 +6,8 @@ use XAKEPEHOK\EnumHelper\EnumHelper;
 
 class Direction extends EnumHelper
 {
-    public const INCOMING = 'incoming';
-    public const OUTGOING = 'outgoing';
+    public const string INCOMING = 'incoming';
+    public const string OUTGOING = 'outgoing';
 
     public string $value;
 

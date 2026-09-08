@@ -29,7 +29,7 @@ use XAKEPEHOK\Path\Path;
 # 1. Configure DB (for SQLite *.db file and parent directory should be writable)
 Connector::config(new Medoo([
     'database_type' => 'sqlite',
-    'database_file' => Path::root()->down('db/database.db')
+    'database' => Path::root()->down('db/database.db')
 ]));
 
 # 2. Set plugin default language
